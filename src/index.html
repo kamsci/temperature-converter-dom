@@ -7,22 +7,26 @@
   <title>Tempurature Converter</title>
 </head>
 <body>
-  <h1>Temperature Converter</h1>
-  <form class="enter-temp">
-    <input type='text' id='tempInput'>
-    <div class='btns'>
-      <button type='Submit' id="submitTemp">Submit</button>
-      <button type='Clear'>Clear</button>
-    </div class='radio'>
-      <input type="radio" id="F" name="tempType" value="F" checked>Fahrenheit</input>
-      <input type="radio" id="C" name="tempType" value="C">Celsius</input>
+  <form id="converter">
+    <h1>Classic Temperature Converter</h1>
+    <div class='userInput'>
+      <input class="number" id="uInput" placeholder="Enter Temperature">
+    </div>
+    <div>
+      <input type="radio" id="F" name="tempType" checked>
+      <label for="F">&deg;Fahrenheit</label>
+      <input type="radio" id="C" name="tempType">
+      <label for="F">&deg;Celcius</label>
+    </div>
+    <div class="btns">
+      <button type="submit" id="userTemp" value="Submit">Submit</button>
+      <button type="reset" value="Reset">Clear</button>
     </div>
   </form>
-
   <div>
-    <p class="output"> ? </p>
+    <output form="converter" id="output">?</output>
   </div>
-
+  <p>Displayed as <span class="hot">Hot</span> or <span class="cold">Cold</span> based on the <span class="perfect">maximum</span> comfortable room temperature for sedentary adults.</p>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

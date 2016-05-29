@@ -1,41 +1,44 @@
 body {
   font-family: helvetica;
-  background-color: lightgrey;
   text-align: center;
+  border: 2px solid purple;
+
 }
 
-h1 {
+.userInput {
+  margin-bottom: 10px;
+  height: 20px;
+}
+
+.btns {
+  margin-top: 30px;
+}
+.btns button {
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+}
+
+#output {
+  display: block;
+  margin: 30px auto 30px auto;
+  background-color: lightgray;
+  height: 40px;
+  width: 100px;
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hot {
+  color: red;
+}
+
+.cold {
   color: blue;
 }
 
-input {
-  height: 30px;
-  width: 300px;
-}
-.btns {
-
-}
-
-button {
-  background-color: white;
-  padding: 10px 20px;
-  margin: 20px 20px;
-  font-weight: bold;
-  font-size: 15px;
-  border: 1px, solid, grey;
-}
-
-.radio {
-  display: block;
-  text-align: left; /* Doesn't work*/
-}
-
-.output  {
-  font-family: Helvetica;
-  font-size: 15px;
-  background-color: white;
-  border: 1px solid #c4c4c4;
-  padding: 10px 60px 10px 60px;
-  margin: 30px 180px;
-
+.perfect {
+  color: green;
 }

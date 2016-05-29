@@ -1,33 +1,48 @@
-console.log('Hello, front end');
+var inputTemp = document.getElementById('uInput');
+var submit = document.getElementById('userTemp');
+var answer = document.getElementById('output');
 
-document.addEventListener('DOMContentLoaded', function() {
-  // add document functions that snatch from DOM under here..
-  var htmlSubmit = document.getElementById('submitTemp');
+var tempF = document.getElementById('F');
+var tempC = document.getElementById('C');
 
-  htmlSubmit.addEventListener('click', function(event) {
-    event.preventDefault();
-    var radio = document.querySelector('input[name="tempType"]:checked').value;
+var reset = document.getElementById
 
-    if (radio === "C") {
-      var temp = document.getElementById('tempInput').value;
-      console.log(temp);
+submit.addEventListener('click', function(event) {
+  event.preventDefault(event);
 
-      var fTemp = temp * 1.8 + 32;
-      fTempRound = Math.floor(fTemp);
-      console.log(fTempRound);
+  if (tempF.checked) {
+    var convertedTemp = Math.round((inputTemp.value - 32) * (5/9));
+      if (convertedTemp > 24) {
+        answer.classList.add('hot');
+        answer.classList.remove('cold');
+        answer.classList.remove('perfect');
+      } else if (convertedTemp < 24){
+        answer.classList.add('cold');
+        answer.classList.remove('hot');
+        answer.classList.remove('perfect');
+      } else if (convertedTemp == 24) {
+        answer.classList.add('perfect');
+        answer.classList.remove('cold');
+        answer.classList.remove('hot');
+      }
+  } else if (tempC.checked) {
+    var convertedTemp = Math.round(inputTemp.value * (9/5) + 32);
+      if (convertedTemp > 75) {
+        answer.classList.add('hot');
+        answer.classList.remove('cold');
+        answer.classList.remove('perfect');
+      } else if (convertedTemp < 75){
+        answer.classList.add('cold');
+        answer.classList.remove('hot');
+        answer.classList.remove('perfect');
+      } else {
+        answer.classList.add('perfect');
+        answer.classList.remove('cold');
+        answer.classList.remove('hot');
+      }
+  }
+  console.log(answer);
+  answer.innerHTML = convertedTemp;
 
-      var jsOutput = getElementsByClassName('output');
-      jsOutput.textContent = fTempRound;
-    } else {
-      var temp = document.getElementById('tempInput').value;
-      console.log(temp);
+}); // End Event Listener
 
-      var cTemp = (temp - 32) / 1.8;
-      cTempRound = Math.floor(cTemp);
-      console.log(cTempRound);
-
-      var jsOutput = getElementsByClassName('output');
-      jsOutput.textContent = cTempRound;
-    }
-  });
-});
